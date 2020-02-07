@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Desafio Módulo 1</title>
+  </head>
+  <body>
+    <script>
+      // Javascript
+      
+      //Desafio módulo 1, exercício 5
+
+      var retorno;
+      //vetor de objetos abaixo
+      var usuarios = [
+        {
+          nome: "Diego",
+          habilidades: ["Javascript", "ReactJS", "Redux"]
+        },
+        {
+          nome: "Gabriel",
+          habilidades: ["VueJS", "Ruby on Rails", "Elixir"]
+        }
+        ];
+        
+        for (let value of usuarios){
+          retorno = `O ${value.nome} possui as habilidades:`
+          retorno = `${retorno} ${value.habilidades.join(', ')}`;
+          console.log(retorno);
+        }
+    </script>
+  </body>
+</html>
