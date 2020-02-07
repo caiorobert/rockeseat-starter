@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <meta charset="UTF=8">
+    <title>Curso Javascript</title>
+  </head>
+  <body>
+    <script>
+      // Javascript
+      
+      //Estruturas de repetição: for, while
+
+      //Exemplo de for
+      for (var i = 0; i <= 100; i++){
+        //console.log(i);
+        //Descomentar linha acima para testar
+      }
+
+      //Exemplo de while
+      var j = 0;
+      while (j <= 100){
+        //console.log(j);
+        //Descomentar linha acima para testar
+        j++;
+      }
+
+      //Quando usar: 
+      //O for é recomendado usar for quando souber tamanho do intervalo
+      //While é bom quando não sabemos quantas vezes ele vai ser chamado
+
+      //Exemplo do while sem saber qtd de interações
+      j = 13549878123;
+      k = 0;
+      while (j > 50) {
+        console.log(j);
+
+        j /= 5;
+        k ++;
+      }
+
+      //Bônus: Coloquei um contador dentro do while acima
+      //e imprimi ele abaixo para saber quantas vezes
+      //o while foi chamado
+      //Usa-se a crase '`' para concatenar valores
+      //em string, exemplo abaixo concatenei o trecho ${k}
+      console.log(`O while foi executado ${k} vezes`);
+    </script>
+  </body>
+</html>
