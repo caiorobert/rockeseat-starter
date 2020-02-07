@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <title>Curso Javascript</title>
+  </head>
+  <body>
+    <script>
+      // Javascript
+      
+      //Condicionais em JS
+      //Abaixo exemplo de uso com If e com Switch
+
+      function retornaSexoIf(sexo){
+        // M, F
+        //Masculino, Feminino
+
+        //para comparar em JS, precisa usar dois '='
+        //caso contrário, estará definindo valor à variável
+        //3 iguais (=) ele verifica valor e tipo
+        
+        //Uso de If 
+        if (sexo === 'M') {
+          return 'Masculino';
+        }else if (sexo === 'F'){
+          return 'Feminino';
+        }else{
+          return 'Outro';
+        }
+      }
+
+      function retornaSexoSwitch(sexo){
+        //Como estamos comparando sempre a variavel sexo
+        //o uso do switch case simplifica a condição
+        //Uso do switch case
+        switch (sexo){
+          case 'M':
+            return 'Masculino';
+          case 'F':
+            return 'Feminino';
+          default:
+            return 'Outro';
+        }
+      }
+
+      var resultadoIf = retornaSexoIf('M'); //usando a função
+      var resultadoSwitch = retornaSexoSwitch('F'); //usando a função
+
+      console.log(resultadoIf);
+      console.log(resultadoSwitch);
+    </script>
+  </body>
+</html>
