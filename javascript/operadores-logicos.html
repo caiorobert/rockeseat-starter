@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <meta charset="UTF=8">
+    <title>Curso Javascript</title>
+  </head>
+  <body>
+    <script>
+      // Javascript
+      
+      //Operadores lógicos: AND, OR, NOT
+
+      //Usando operador AND
+      var sexo = 'M', idade = 26;
+
+      if (sexo === 'M' && idade >= 18) {
+        console.log('Operador AND (&&)')
+      };
+
+      //Usando operador OR
+      if (sexo === 'M' || idade>= 18) {
+        console.log('Operador OR (||)')
+      };
+
+      //Usando operador NOT
+      if (sexo !== 'F'){
+        console.log('Operador NOT (!)')
+      };
+
+      //Bônus:
+      //If sempre retorna true Or false então podemos atribuir
+      //valor a variavel dessa forma abaixo:
+      var masculino = (sexo === 'M');
+      
+      console.log(masculino);
+    </script>
+  </body>
+</html>
