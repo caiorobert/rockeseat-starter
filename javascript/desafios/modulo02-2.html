@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Desafio Módulo 2</title>
+  </head>
+  <body>
+    <script>
+      // Javascript
+      
+      //Desafio módulo 2, exercício 2
+      var btnElement = document.createElement('button');
+      var textElement = document.createTextNode('Criar quadrado');
+      var bodyElement = document.querySelector('body');
+
+      btnElement.appendChild(textElement);
+      bodyElement.appendChild(btnElement);
+
+      btnElement.onclick = function(){
+        var divElement = document.createElement('div');
+        divElement.setAttribute('class', 'quadrado');
+
+        divElement.style.width = 100;
+        divElement.style.height = 100;
+        divElement.style.backgroundColor = '#f00';
+
+        divElement.onmouseover = function(){
+          var newColor = getRandomColor(); // #E943F0
+          divElement.style.backgroundColor = newColor;
+        }
+        bodyElement.appendChild(divElement);
+      }
+
+      function getRandomColor() {
+        var letters = "0123456789ABCDEF";
+        var color = "#";
+        for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+        return color;
+      }
+
+    </script>
+  </body>
+</html>

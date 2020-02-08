@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Desafio Módulo 2</title>
+  </head>
+  <body>
+    <input type="text" name="nome" />
+    <button onClick="adicionar()">Adicionar</button>
+    <script>
+      // Javascript
+      
+      //Desafio módulo 2, exercício 4
+      var nomes = ["Diego", "Gabriel", "Lucas"];
+      var bodyElement = document.querySelector('body');
+      var ulElement = document.createElement('ul');
+
+      for(let values of nomes){
+        var liElement = document.createElement('li');
+        var textElement = document.createTextNode(values);
+        
+        liElement.appendChild(textElement);
+        ulElement.appendChild(liElement);
+        bodyElement.appendChild(ulElement);
+      }
+
+      function adicionar(){
+        var liElement = document.createElement('li');
+        var inputElement = document.querySelector('input[name=nome]');
+        var inputValue = inputElement.value;
+
+        if (inputValue !== "") {
+          var textElement = document.createTextNode(inputValue);
+          
+          liElement.appendChild(textElement);
+          ulElement.appendChild(liElement);
+
+          inputElement.value = "";
+        }else{
+          alert('Preencha um nome');
+        }
+      }
+    </script>
+  </body>
+</html>

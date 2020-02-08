@@ -1,0 +1,25 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Desafio Módulo 2</title>
+  </head>
+  <body>
+    <script>
+      // Javascript
+      
+      //Desafio módulo 2, exercício 3
+      var nomes = ["Diego", "Gabriel", "Lucas"];
+      var bodyElement = document.querySelector('body');
+      var ulElement = document.createElement('ul');
+
+      for(let values of nomes){
+        var liElement = document.createElement('li');
+        var textElement = document.createTextNode(values);
+        
+        liElement.appendChild(textElement);
+        ulElement.appendChild(liElement);
+        bodyElement.appendChild(ulElement);
+      }
+    </script>
+  </body>
+</html>
