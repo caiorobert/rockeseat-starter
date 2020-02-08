@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Curso Javascript</title>
+  </head>
+  <body>
+    <div id="app">
+      <input type="text" name="nome" id="nome" class="nome"/>
+      <button class="botao">Adicionar</button>
+    </div>
+    <script>
+      // Javascript 
+      
+      //Manipulando a DOM
+      
+      //Formas de buscar elementos da DOM:
+      //Busca por ID
+      var inputElementID = document.getElementById('nome');
+      //Busca por tag, sempre retorna um vetor
+      var inputElementTagName = document.getElementsByTagName('input');
+      //Busca por tag com posição do vetor
+      var inputElementTagName1 = document.getElementsByTagName('input')[0];
+      //Busca por nome de classe, retorna sempre um vetor
+      var inputElementClassName = document.getElementsByClassName('nome');
+      //Busca por nome de classe com posição do vetor
+      var inputElementClassName1 = document.getElementsByClassName('nome')[0];
+      
+      //Busca por querySelector: Ele deixa você andar pela DOM.
+      //Só retorna um elemento
+      //Busca navegando pelos elementos da tag
+      var inputElementQuery1 = document.querySelector('body div#app input');
+      //Busca referenciando propriedades da tag
+      var inputElementQuery2 = document.querySelector('input[name=nome]');
+
+      //QuerySelectorAll: retorna um vetor
+      var inputElementQueryAll = document.querySelectorAll('input[name=nome]');
+
+      var inputElement = document.querySelector('input[name=nome]');
+      var btnElement = document.querySelector('button.botao');
+      btnElement.onclick = function(){
+        //Pega texto digitado no input e joga no alert
+        var text = inputElement.value;
+        alert(text);
+      }
+    </script>
+  </body>
+</html>
