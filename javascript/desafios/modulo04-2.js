@@ -6,11 +6,21 @@ function buscaGithubUser(user) {
   var inputText = inputElement.value;
   var apiGithub = (inputText == '') ? 'diego3g' : inputText;
 
+  var ulElement = document.querySelector('#app ul');
+  ulElement.innerHTML = '';
+
+  var liElement = document.createElement('li');
+  var liText = document.createTextNode('Carregando...!');
+
+  liElement.appendChild(liText);
+  ulElement.appendChild(liElement);
+  divElement.appendChild(ulElement);
+
   axios.get(`https://api.github.com/users/${apiGithub}/repos`)
     .then(function(response) {
-      var ulElement = document.querySelector('#app ul');
+      // var ulElement = document.querySelector('#app ul');
       ulElement.innerHTML = '';
-
+      
       for(repos in response.data) {
         var liElement = document.createElement('li');
         var linkElement = document.createElement('a');
@@ -32,7 +42,21 @@ function buscaGithubUser(user) {
     })
 
     .catch(function(error) {
-      console.warn('Erro de requisição');
+      // console.error("Error response:");
+      // console.error(error.response.data);    // ***
+      // console.error(error.response.status);  // ***
+      // console.error(error.response.headers); // ***
+      if (error.response.status === 404) {
+        var ulElement = document.querySelector('#app ul');
+        ulElement.innerHTML = '';
+        
+        var liElement = document.createElement('li');
+        var liText = document.createTextNode('Usuário não encontrado!');
+
+        liElement.appendChild(liText);
+        ulElement.appendChild(liElement);
+        divElement.appendChild(ulElement);
+      }
     })
   
   inputElement.value ='';
