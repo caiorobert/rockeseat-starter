@@ -4,15 +4,9 @@ var divElement = document.querySelector('#app');
 
 function buscaGithubUser(user) {
   var inputText = inputElement.value;
-  var apiGithub;
-  
-  if (inputText == '') {
-    apiGithub = 'https://api.github.com/users/diego3g/repos';
-  }else{
-    apiGithub = `https://api.github.com/users/${inputText}/repos`;
-  }
+  var apiGithub = (inputText == '') ? 'diego3g' : inputText;
 
-  axios.get(apiGithub)
+  axios.get(`https://api.github.com/users/${apiGithub}/repos`)
     .then(function(response) {
       var ulElement = document.querySelector('#app ul');
       ulElement.innerHTML = '';
@@ -27,6 +21,7 @@ function buscaGithubUser(user) {
         var linkText = document.createTextNode(full_name);
         
         linkElement.setAttribute('href', html_url);
+        linkElement.setAttribute('target', '_blank');
 
         linkElement.appendChild(linkText);
         liElement.appendChild(linkElement);
@@ -37,7 +32,7 @@ function buscaGithubUser(user) {
     })
 
     .catch(function(error) {
-      console.log(error);
+      console.warn('Erro de requisição');
     })
   
   inputElement.value ='';
